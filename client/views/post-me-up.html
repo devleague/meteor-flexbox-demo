@@ -1,0 +1,34 @@
+<head>
+  <title>post-me-up</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <h1>Post It Here</h1>
+
+  {{> posterBoard}}
+</body>
+
+<template name="posterBoard">
+  <div class="input">
+    <span>
+      <input type="text" id="message" maxlength="30">
+    </span>
+    <span>
+      <a href="#" id="save">Save</a>
+    </span>
+    <span></span>
+  </div>
+  <div class="notes">
+    {{#each notes}}
+      {{> note}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="note">
+  <div class="note">
+    <div class="message">{{message}}</div>
+    <div class="delete">x</div>
+  </div>
+</template>
